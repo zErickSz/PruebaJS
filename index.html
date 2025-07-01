@@ -4,9 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/styles.css">
-    <title>Practica JavaScript</title>
-</head>
+    <title>Práctica JavaScript</title>
+    </head>
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Práctica JavaScript</h1>
+            <p>Implementa las funcionalidades solicitadas</p>
+        </div>
+
+        <div class="content">
+            <!-- Sección 1: Panel desplegable -->
+            <div class="section">
+                <h2>🎯 Instrucción 1: Panel Desplegable</h2>
+                <p><strong>Haz que el botón "Mostrar Panel" muestre/oculte el panel naranja de abajo.</strong></p>
+                <button class="btn" id="togglePanel">Mostrar Panel</button>
+                <div class="hidden-panel" id="hiddenPanel">
+                    <h3>¡Panel Secreto! 🎉</h3>
+                    <p>Este panel se muestra y oculta dinámicamente. ¡Buen trabajo!</p>
+                </div>
+            </div>
+
+            <!-- Sección 2: Contador -->
+            <div class="section">
+                <h2>🔢 Instrucción 2: Contador Interactivo</h2>
+                <p><strong>Haz que los botones + y - aumenten y disminuyan el contador. El botón "Reset" debe ponerlo en 0.</strong></p>
+                <div class="counter-display" id="counter">0</div>
+                <button class="btn btn-success" id="incrementBtn">➕ Aumentar</button>
+                <button class="btn btn-danger" id="decrementBtn">➖ Disminuir</button>
+                <button class="btn" id="resetBtn">🔄 Reset</button>
+            </div>
+
+            <!-- Sección 3: Lista de tareas -->
+            <div class="section">
+                <h2>📝 Instrucción 3: Lista de Tareas</h2>
+                <p><strong>Haz que se puedan agregar tareas escribiendo en el input y presionando "Agregar". Cada tarea debe tener un botón "X" para eliminarla.</strong></p>
+                <div class="form-group">
+                    <input type="text" id="taskInput" placeholder="Escribe una nueva tarea...">
+                    <button class="btn" id="addTaskBtn">➕ Agregar Tarea</button>
+                </div>
+                <div class="task-list" id="taskList">
+                    <p style="text-align: center; color: #666;">No hay tareas aún. ¡Agrega la primera!</p>
+                </div>
+            </div>
+
+            <!-- Sección 4: Cambio de tema -->
+            <div class="section">
+                <h2>🌙 Instrucción 4: Cambio de Tema</h2>
+                <p><strong>Haz que el botón cambie entre tema claro y tema oscuro de toda la página.</strong></p>
+                <button class="btn" id="themeToggle">🌙 Cambiar a Tema Oscuro</button>
+            </div>
+
+            <!-- Sección 5: Calculadora simple -->
+            <div class="section">
+                <h2>🧮 Instrucción 5: Calculadora Básica</h2>
+                <p><strong>Haz que funcione la calculadora. Debe tomar los dos números y la operación seleccionada, y mostrar el resultado.</strong></p>
+                <div class="form-group">
+                    <label>Primer número:</label>
+                    <input type="number" id="num1" placeholder="Ej: 10">
+                </div>
+                <div class="form-group">
+                    <label>Operación:</label>
+                    <select id="operation">
+                        <option value="add">➕ Sumar</option>
+                        <option value="subtract">➖ Restar</option>
+                        <option value="multiply">✖️ Multiplicar</option>
+                        <option value="divide">➗ Dividir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Segundo número:</label>
+                    <input type="number" id="num2" placeholder="Ej: 5">
+                </div>
+                <button class="btn" id="calculateBtn">🔢 Calcular</button>
+                <div class="result-message" id="calculatorResult"></div>
+            </div>
+
+            <!-- Sección 6: Galería interactiva -->
+            <div class="section">
+                <h2>🖼️ Instrucción 6: Galería Interactiva</h2>
+                <p><strong>Haz que al hacer clic en cada imagen, cambie de color aleatoriamente. Agrega un botón que genere una nueva imagen en la galería.</strong></p>
+                <button class="btn" id="addImageBtn">➕ Agregar Imagen</button>
+                <div class="image-gallery" id="imageGallery">
+                    <div class="image-item">Imagen 1</div>
+                    <div class="image-item">Imagen 2</div>
+                    <div class="image-item">Imagen 3</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/Ejercicios/04-tipadoDinamico.js"></script>
