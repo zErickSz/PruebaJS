@@ -71,7 +71,7 @@
 
                         if (text){
                           text.style.display = "none";
-                        } 
+                        }
                         // Agregar Tarea
                         const newTask  = document.createElement("div");
                         newTask.className = "task-item";
@@ -86,6 +86,7 @@
                         // Funcionalidad boton eliminar
                         deleteBtn.addEventListener("click", () =>{
                                 newTask.remove();
+
                         });
 
                         // Agregar Botones / Tareas
@@ -97,21 +98,30 @@
                 });
         }
 
-        
-
         // 4. Cambio de Tema:
         //    - Selecciona el botón #themeToggle
         //    - Agrega/quita la clase 'dark-theme' al body
         //    - Cambia el texto del botón según el tema actual
         
+        const themeToogleBtn = document.getElementById("themeToggle")
 
+        if (themeToogleBtn){
+                themeToogleBtn.addEventListener("click", () =>{
+                        document.body.classList.toggle("dark-theme");
 
+                        if (document.body.classList.contains("dark-theme")){
+                                themeToogleBtn.textContent = "☀️ Cambiar a Tema Claro";
+                        } else {
+                                themeToogleBtn.textContent = "🌙 Cambiar a Tema Oscuro";
+                        }
+                });
+        }
         // 5. Calculadora:
         //    - Selecciona los inputs #num1, #num2, select #operation, botón #calculateBtn y div #calculatorResult
         //    - Realiza la operación seleccionada con los dos números
         //    - Muestra el resultado en el div de resultado
         
-
+        
 
         // 6. Galería:
         //    - Selecciona todas las imágenes existentes y el botón #addImageBtn
