@@ -121,10 +121,30 @@
         //    - Realiza la operación seleccionada con los dos números
         //    - Muestra el resultado en el div de resultado
         
-        
+        const calculateBtn = document.getElementById("calculateBtn"); 
+        const calculatorResult = document.getElementById("calculatorResult")
 
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+        let operation = document.getElementById("operation");
+
+        if (calculateBtn){
+                calculateBtn.addEventListener("click", () =>{
+                        if (operation === 1){
+                                num1 + num2
+                        } else {
+                                return;
+                        }
+                        if (operation === 4){
+                                num1 - num2
+                        } else {
+                                return;
+                        }
+                });
+        }
         // 6. Galería:
         //    - Selecciona todas las imágenes existentes y el botón #addImageBtn
         //    - Al hacer clic en una imagen, cambia su color de fondo aleatoriamente
         //    - Al hacer clic en "Agregar Imagen", crea una nueva imagen en la galería
         
+
