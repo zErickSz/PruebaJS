@@ -121,30 +121,70 @@
         //    - Realiza la operación seleccionada con los dos números
         //    - Muestra el resultado en el div de resultado
         
-        const calculateBtn = document.getElementById("calculateBtn"); 
-        const calculatorResult = document.getElementById("calculatorResult")
 
-        let num1 = document.getElementById("num1");
-        let num2 = document.getElementById("num2");
-        let operation = document.getElementById("operation");
+        const calculateBtn = document.getElementById("calculateBtn");
+        const num1 = document.getElementById("num1");
+        const num2 = document.getElementById("num2");
+        const operation = document.getElementById("operation");
+        const calculatorResult = document.getElementById("calculatorResult");
 
         if (calculateBtn){
-                calculateBtn.addEventListener("click", () =>{
-                        if (operation === 1){
-                                num1 + num2
-                        } else {
+                calculateBtn.addEventListener("click", () => {
+                        // Valores
+                        const number1 = parseFloat(num1.value);
+                        const number2 = parseFloat(num2.value);
+                        const selectedOperation = operation.value;
+
+                        let result;
+
+                        //Verificar que los numeros sean validos
+                        if (isNaN(number1) || isNaN(number2)) {
+                                calculatorResult.textContent = "Por favor ingrese numeros validos";
+                                calculatorResult.className = "result-message result-error";
+                                calculatorResult.style.display = "block";
                                 return;
                         }
-                        if (operation === 4){
-                                num1 - num2
-                        } else {
-                                return;
+
+                        // Operaciones
+                        if (selectedOperation === "add"){
+                                result = number1 + number2;
+                        } else if (selectedOperation === "subtract") {
+                                result = number1 - number2;
+                        } else if (selectedOperation === "multiply") {
+                                result = number1 * number2;
+                        } else if (selectedOperation === "divide") {
+                                if (number2 === 0) {
+                                        calculatorResult.textContent = "No se puede dividir por cero";
+                                        calculatorResult.className = "result-message result-error";
+                                        calculatorResult.style.display = "block";
+                                        return;   
+                                }
+                                result = number1 / number2;
                         }
+
+                        // Resultado mostrar
+                        calculatorResult.textContent = `Resultado: ${result}`;
+                        calculatorResult.className = "result-message result-success";
+                        calculatorResult.style.display = "block";
                 });
         }
+
         // 6. Galería:
         //    - Selecciona todas las imágenes existentes y el botón #addImageBtn
         //    - Al hacer clic en una imagen, cambia su color de fondo aleatoriamente
         //    - Al hacer clic en "Agregar Imagen", crea una nueva imagen en la galería
-        
 
+        const addImageBtn = document.getElementById("addImageBtn");
+        const imageGallery = document.getElementById("imageGallery");
+
+        if (addImageBtn) {
+                addImageBtn.addEventListener("click", () => {
+
+                });
+        }
+        
+        if (imageGallery) {
+                imageGallery.addEventListener("click", () => {
+                        
+                });
+        }
