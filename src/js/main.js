@@ -176,12 +176,24 @@
 
         const addImageBtn = document.getElementById("addImageBtn");
         const imageGallery = document.getElementById("imageGallery");
-        
+
+        function deleteBtn(imageItem) {
+                const deleteBtn = document.createElement("button");
+                deleteBtn.className = "delete-btn"
+                deleteBtn.textContent ="X"
+
+                if (deleteBtn) {
+                        deleteBtn.addEventListener("click", () => {
+                                imageItem.remove();
+                        });
+                }
+        }
+
         function getRandomColor() {
                 const randomColor = Math.floor(Math.random() * 16777215).toString(16);
                 return `#${randomColor.padStart(6, '0')}`;
         }
-
+        
         function makeImageInteractive(imageItem) {
                 imageItem.addEventListener("click", () => {
                         imageItem.style.background = getRandomColor();
@@ -190,22 +202,12 @@
 
         const existingImages = document.querySelectorAll(".image-item");
         existingImages.forEach(makeImageInteractive);
-
+        existingImages.forEach(deleteBtn);
+        
 
         if (addImageBtn) {
                 addImageBtn.addEventListener("click", () => {
                         const newImage = document.createElement("div");
-                        const deleteBtn = document.createElement("button");
-                        deleteBtn.className = "delete-btn"
-                        deleteBtn.textContent ="X"
-                        
-                        // Funcion del boton borrar
-                        
-                        if (deleteBtn) {
-                                deleteBtn.addEventListener("click", () => {
-                                        newImage.remove();
-                                });
-                        }
 
                         newImage.classList = "image-item";
                         newImage.textContent = `Imagen ${imageGallery.children.length + 1}`;
@@ -213,5 +215,8 @@
                         newImage.appendChild(deleteBtn)
                         makeImageInteractive(newImage); 
                         imageGallery.appendChild(newImage)
+
+                        
                 });
+
         }
